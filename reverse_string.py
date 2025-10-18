@@ -1,0 +1,13 @@
+# LeetCode Problem: Reverse String .
+# Problem Link: https://leetcode.com/problems/reverse-string/
+# Difficulty: Easy
+
+
+def reverseString(self, s):
+    i = 0
+    j = len(s) - 1
+    while i < j:
+        s[i], s[j] = s[j], s[i]
+        i += 1
+        j -= 1
+    return s
