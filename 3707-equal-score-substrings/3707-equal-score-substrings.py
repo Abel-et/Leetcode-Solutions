@@ -5,11 +5,15 @@ class Solution(object):
         :rtype: bool
         """
         value =[]
+        total = 0
         for i in s:
-            
-            value.append(ord(i)-96)
+            index = ord(i)-96
+            value.append(index)
+            total += index
         print(value)
-        total = sum(value)
+
+
+       
         left =0
         for i in range(len(value)):
             left += value[i]
