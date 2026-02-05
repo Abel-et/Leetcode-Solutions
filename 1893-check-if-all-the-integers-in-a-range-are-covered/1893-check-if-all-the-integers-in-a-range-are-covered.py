@@ -7,15 +7,28 @@ class Solution(object):
         :rtype: bool
         """
         n = len(ranges)
-        arr = set()
+        ranges.sort(key = lambda x: x[0])
+        print(ranges)
         for i in range(n):
             start = ranges[i][0]
             end = ranges[i][1]
-            for j in range(start,end+1):
-                arr.add(j)
+            if start <= left and end>= left:
+                print('i here ',start,end)
+                if start <= right and right <= end:
+                    return True
+                else:
+                    j = i+1
+                    while j < n:
+                        s = ranges[j][0]
+                        e = ranges[j][1]
 
-        for i in range(left, right+1):
-            if i not in arr:
-                return False
+                        ps = ranges[j-1][0] +1
+                        pe = ranges[j-1][1] + 1
+                        print('in while loop',s,e , ps, pe)
+                        if (ps == s or ps == e) or (pe == s or pe == e):
+
+                            if s >= right or e >= right:
+                                return True
+                        j+=1
         else:
-            return True
+            return False
