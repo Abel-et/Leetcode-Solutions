@@ -8,14 +8,17 @@ class Solution(object):
         length =0
         g = list(chars)
         for word in words:
+            print(word)
             if len(word) > len(chars):
                 continue
             for i in word:
                 if i not in g :
                     break
                 else:
-                    g.remove(i)
+                    p = word.count(i)
+                    k = g.count(i)
+                    if p > k:
+                        break
             else:
-                g = list(chars)
                 length += len(word)
         return length
