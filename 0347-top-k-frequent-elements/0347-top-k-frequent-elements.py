@@ -9,6 +9,7 @@ class Solution:
             else:
                 hash[i] = 1
         
+        
         for i in range(k):
             maxValue = max(hash , key= hash.get)
             arr.append(maxValue)
