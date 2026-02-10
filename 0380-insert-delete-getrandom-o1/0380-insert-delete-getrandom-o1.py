@@ -19,8 +19,6 @@ class RandomizedSet:
             return False
         
     def getRandom(self) -> int:
-        # k = self.container.pop()
-        # self.container.add(k)
         return random.choice(tuple(self.container))
 
         
