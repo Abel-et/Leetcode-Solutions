@@ -4,12 +4,12 @@ class Solution:
         # catching the elements with their frequency 
         digits = Counter(s)
        
-        # checking if the num and it adject have a difference of one  and have same frequency
+        # checking if the num and it adject have a difference and have same frequency equal to their numerical value
         for i in range(1,len(s)):
             num = int(s[i])
             if num == digits[str(num)]:
                 next = int(s[i-1])
-                if (next + 1) == num or (next - 1) == num:
+                if str(num) != str(next):
                     if next == digits[str(next)]:
                         return f"{next}{num}" 
         else:
