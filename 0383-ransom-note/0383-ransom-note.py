@@ -5,7 +5,7 @@ class Solution:
         mag = Counter(magazine)
 
         for i in set(ransomNote):
-            if ran[i] != mag[i]:
+            if ran[i] > mag.get(i, 0):
                 return False
         else:
             return True
