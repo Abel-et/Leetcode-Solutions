@@ -11,7 +11,9 @@ class Solution:
         for key,val in remained.items():
             if val > 0 and key in permuted:
                 index = permuted.index(key)
-                permuted.insert(index, key )
+                for i  in range(val):
+                    permuted.insert(index, key )
             elif val > 0 :
-                permuted.append(key)
+                for i in range(val):
+                    permuted.append(key)
         return "".join(permuted)
