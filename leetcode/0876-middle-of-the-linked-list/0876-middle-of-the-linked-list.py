@@ -19,8 +19,12 @@ class Solution:
         # finding the middle node
         middle = length//2
         i = 0
-        while i < middle-1:
+
+        # go until prev node of the middle node
+        while i < middle:
             dummy = dummy.next
+            print(dummy.val)
             i+=1
         
-        return dummy.next if length%2 == 0 else dummy.next.next
+        # if len is even return the second middle else return 
+        return dummy if length%2 == 0 else dummy.next
