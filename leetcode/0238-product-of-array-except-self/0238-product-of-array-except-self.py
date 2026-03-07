@@ -1,6 +1,12 @@
 import math
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # the problem is to put a product of all element in the arr which not include the current elemnt 
+        # and division is not allowed to solve this task  
+        #           approch 
+        #   first prepare an output arr which is every its elemnts is one 
+        #   then multiply it all element from starting to the end and from the end to the starting 
+
         # prefix start from the first to the end and postfix starts form the end and comes to first 
         postfix,prefix = 1,1
 
