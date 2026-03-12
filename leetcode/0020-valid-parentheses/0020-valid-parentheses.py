@@ -17,11 +17,10 @@ class Solution:
                 # and the top of the stack is not the oposite of it return  False
                 if stack and stack[-1] != parentheses[i] or not stack:
                     return False
-                
-                # or the top of the stack is valid to the given inclosed parenthese delete it 
-                else:
-                    stack.pop()
                     
+                # or the top of the stack is valid to the given inclosed parenthese delete it 
+                stack.pop()
+
             # if the give parent is opened should add to the stack
             else:
                 stack.append(i)
