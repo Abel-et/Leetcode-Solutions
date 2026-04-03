@@ -9,26 +9,18 @@ class Solution:
         # the idea is like on our linked list session we do next next thing so 
         # in this problem also we use it left.left, right.right
 
-        total = [0]
-        
+        self.total = 0
 
-        def preOrder(root, total):
-            if root is None:
+        def dfs(node, parent , grandparent):
+            
+            # base case is the cild (node)is not null
+            if not node:
                 return 
-            if root.val%2 == 0:
-                if root.left is not None :
-                    if root.left.left is not None:
-                        total[0] += root.left.left.val
-                    if root.left.right is not None:
-                        total[0] += root.left.right.val
-                if root.right is not None :
-                    if root.right.right is not None:
-                        total[0] += root.right.right.val
-                    if root.right.left is not None:
-                        total[0] += root.right.left.val
-            preOrder(root.left, total)
-            preOrder(root.right, total)
-            
-        preOrder(root, total)
-        return total[0]
-            
+            # if grand parent is not none and it val is eve 
+            if grandparent and grandparent.val%2 == 0:
+                self.total += node.val
+
+            dfs(node.left , node, parent )
+            dfs(node.right, node, parent)
+        dfs(root, None , None)
+        return self.total
