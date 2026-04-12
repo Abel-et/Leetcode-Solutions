@@ -11,12 +11,14 @@ class Solution:
                     return left + 1
                 else:
                     return left
+
             elif nums[mid] > target:
                 if mid == 0 and nums[mid] > target:
                     return 0
                 if nums[mid] + 1 == target:
                     return mid+ 1
                 right = mid -1
+                
             elif nums[mid] < target:
                 if nums[mid] + 1 == target:
                     return mid +1
