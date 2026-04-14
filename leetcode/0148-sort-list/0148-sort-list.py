@@ -16,7 +16,7 @@ class Solution:
         while current :
             arr.append(current.val)
             current = current.next
-        print(arr)
+  
 
         # perfomed the divide function in merg sort
         def divide(left , right ,arr):
