@@ -12,9 +12,10 @@ class Solution:
             add = skill[left] + skill[right]
             unique.add(add)
             ans += prod
+            if len(unique) > 1:
+                return -1
             left +=1
             right -=1
         
-        if len(unique) > 1:
-            return -1
+        
         return ans
