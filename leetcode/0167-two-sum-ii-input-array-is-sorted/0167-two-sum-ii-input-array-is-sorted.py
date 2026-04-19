@@ -4,11 +4,9 @@ class Solution:
         
         #  using colliding pointer approach 
         while left < right:
-            sum = numbers[left] + numbers[right]
-            if sum == target:
+            if (numbers[left] + numbers[right]) == target:
                 return [left + 1 , right + 1]
-            elif sum > target:
+            elif (numbers[left] + numbers[right])  > target:
                 right -=1
             else:
                 left +=1 
-                
