@@ -1,0 +1,78 @@
+# 1374D-Zero-Remainder-Array
+
+**Problem:** [1374D-Zero-Remainder-Array](https://codeforces.com/contest/1374/problem/D)
+
+**time limit per test:** 2 seconds
+
+**memory limit per test:** 256 megabytes
+
+---
+
+You are given an array a consisting of n positive integers.
+
+Initially, you have an integer x = 0. During one move, you can do one of the following two operations:
+
+ 
+-  Choose exactly one i from 1 to n and increase a_i by x (a_i := a_i + x), then increase x by 1 (x := x + 1). 
+-  Just increase x by 1 (x := x + 1). The first operation can be applied no more than once to each i from 1 to n.
+
+Your task is to find the minimum number of moves required to obtain such an array that each its element is divisible by k (the value k is given).
+
+You have to answer t independent test cases.
+
+
+**Input**
+
+The first line of the input contains one integer t (1 ≤ t ≤ 2 ⋅ 10⁴) — the number of test cases. Then t test cases follow.
+
+The first line of the test case contains two integers n and k (1 ≤ n ≤ 2 ⋅ 10⁵; 1 ≤ k ≤ 10⁹) — the length of a and the required divisior. The second line of the test case contains n integers a_1, a_2, …, a_n (1 ≤ a_i ≤ 10⁹), where a_i is the i-th element of a.
+
+It is guaranteed that the sum of n does not exceed 2 ⋅ 10⁵ (∑ n ≤ 2 ⋅ 10⁵).
+
+
+**Output**
+
+For each test case, print the answer — the minimum number of moves required to obtain such an array that each its element is divisible by k.
+
+
+**Example**
+
+**Input**
+
+```
+5
+4 3
+1 2 1 3
+10 6
+8 7 1 8 3 7 5 10 8 9
+5 10
+20 100 50 20 100500
+10 25
+24 24 24 24 24 24 24 24 24 24
+8 8
+1 2 3 4 5 6 7 8
+```
+
+**Output**
+
+```
+6
+18
+0
+227
+8
+```
+
+
+**Note**
+
+Consider the first test case of the example:
+
+ 
+-  x=0, a = [1, 2, 1, 3]. Just increase x; 
+-  x=1, a = [1, 2, 1, 3]. Add x to the second element and increase x; 
+-  x=2, a = [1, 3, 1, 3]. Add x to the third element and increase x; 
+-  x=3, a = [1, 3, 3, 3]. Add x to the fourth element and increase x; 
+-  x=4, a = [1, 3, 3, 6]. Just increase x; 
+-  x=5, a = [1, 3, 3, 6]. Add x to the first element and increase x; 
+-  x=6, a = [6, 3, 3, 6]. We obtained the required array. Note that you can't add x to the same element more than once.
