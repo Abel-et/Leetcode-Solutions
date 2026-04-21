@@ -7,6 +7,7 @@ class Solution:
             val = 1 if d == 1 else -1
             diff[l] += val
             diff[r + 1] -= val
+        print(diff)
 
         res = []
         cur = 0
@@ -16,6 +17,7 @@ class Solution:
 
             # convert char to number
             x = ord(s[i]) - ord('a')
+            print(x, s[i])
 
             # apply shift
             x = (x + cur) % 26
